@@ -39,7 +39,7 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
       image: base64Image,
       mime_type: mimeType
     }, {
-      timeout: 30000 // 30 second timeout
+      timeout: 60000 // 30 second timeout
     });
 
     const { face_shape } = aiResponse.data;
