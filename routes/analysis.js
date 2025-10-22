@@ -23,7 +23,7 @@ const upload = multer({
 });
 
 // Main analysis endpoint
-router.post('/', auth, upload.single('image'), async (req, res) => {
+router.post('/api/analyze', auth, upload.single('image'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ message: 'Please upload an image' });
