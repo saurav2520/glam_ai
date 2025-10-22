@@ -10,7 +10,7 @@ const getApiBaseUrl = () => {
   if (import.meta.env.DEV) {
     return '';
   } else {
-    return 'http://localhost:5000';
+    return 'https://glamai-backend.onrender.com';
   }
 };
 
