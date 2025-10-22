@@ -1,0 +1,8 @@
+Task,Description,Estimated Time (min),Status,Completed
+Define Requirements,"Plan features, tech stack, and scope",30,Not Started,completed
+Set Up MERN Environment,"Initialize Node.js, React, MongoDB Atlas",30,Not Started,completed
+Implement Video Calling,Set up WebRTC with PeerJS and Socket.io,60,Not Started,
+Integrate AI,Add TensorFlow.js FaceMesh for face detection and style suggestions,90,Not Started,
+Backend API & Database,Create APIs and MongoDB schema for user data,60,Not Started,
+Testing & Deployment,"Test locally, deploy to Render/Vercel",30,Not Started,
+Documentation & UI,"Write README, style with Tailwind CSS",30,Not Started,

@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # AI Service (Will be a Web Service on Render)
+  ai-service:
+    build: ./ai-service
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=production
+      - PORT=8000
+    networks:
+      - glamai-network
+
+  # Backend API (Will be a Web Service on Render)
+  backend:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      # We will set these securely in the Render Dashboard
+      - MONGODB_URI=dummy-value 
+      - JWT_SECRET=dummy-value
+      # This internal URL is correct and will work on Render
+      - AI_SERVICE_URL=http://ai-service:8000 
+      - PORT=5000
+    networks:
+      - glamai-network
+    depends_on:
+      - ai-service
+
+networks:
+  glamai-network:
+    driver: bridge
