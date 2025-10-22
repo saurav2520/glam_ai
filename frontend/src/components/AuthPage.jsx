@@ -19,20 +19,20 @@ const AuthPage = () => {
     setLoading(true);
     setError('');
     
-    console.log('Form submitted, attempting:', isLogin ? 'login' : 'register');
+    
 
     try {
       const result = isLogin 
         ? await login(email, password)
         : await register(email, password);
 
-      console.log('Auth result:', result);
+      
 
       if (result.success) {
-        console.log('Auth successful, navigating to /');
+        
         navigate('/');
       } else {
-        console.log('Auth failed:', result.message);
+        
         setError(result.message);
       }
     } catch (err) {
